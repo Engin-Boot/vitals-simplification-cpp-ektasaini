@@ -5,18 +5,14 @@ const int spolimit =90;
 const int respRatelimit[]={30,95};
 
 bool bpmCheck(float bpm){
-   if(bpm < bpmlimit[0]  || bpm > bpmlimit[1])  return false;
-   return true;
+   return (bpm >= bpmlimit[0]  && bpm <= bpmlimit[1]) ;
 }
 bool spoCheck(float spo){
-  if(spo < spolimit)  return false;
-  return true;
+  return (spo >= spolimit);
 }
 bool resRatecheck(float respRate){
-  if(respRate <respRatelimit[0]  || respRate > respRatelimit[1]) return false;
-  return true;
+  return (respRate >=respRatelimit[0]  && respRate <= respRatelimit[1]);
 }
-
   
 bool vitalsAreOk(float bpm, float spo, float respRate) {
    return ( bpmCheck(bpm) && spoCheck(spo) && resRatecheck(respRate));
