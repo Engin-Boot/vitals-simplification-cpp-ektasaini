@@ -5,7 +5,7 @@ const int bpmlimit[]={70,150};
 const int spolimit =90;
 const int respRatelimit[]={30,95};
 
-bool isVitalInRange(float value , float lower, float upper ){
+bool isVitalsInRange(float value , float lower, float upper ){
    return (value>=lower && value <=upper);
 }
 bool vitalsAreOk(float bpm, float spo, float respRate) {
