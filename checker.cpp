@@ -22,15 +22,7 @@ bool resRatecheck(float respRate){
 
   
 bool vitalsAreOk(float bpm, float spo2, float respRate) {
-
-  if ( bpmCheck(bpm) == false )
-    return false;
-  else if ( spoCheck(spo2)==false)
-    return false;
-  else if ( resRatecheck== false)
-    return false;
-  
-  return true;
+   return ( bpmCheck(bpm) && spoCheck(spo2) && resRatecheck(respRate))
 }
 
 
