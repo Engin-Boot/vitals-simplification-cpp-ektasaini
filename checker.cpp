@@ -1,17 +1,20 @@
 #include <assert.h>
+#include<bits/stdc++.h> 
 
-bool vitalsAreOk(float bpm, float spo2, float respRate) {
-  if(bpm < 70 || bpm > 150) {
-    return false;
-  } else if(spo2 < 90) {
-    return false;
-  } else if(respRate < 30 || respRate > 95) {
-    return false;
-  }
-  return true;
+const int bpmlimit[]={70,150};
+const int spolimit =90;
+const int respRatelimit[]={30,95};
+
+bool isVitalsInRange(float value , float lower, float upper ){
+   return (value>=lower && value <=upper);
+}
+bool vitalsAreOk(float bpm, float spo, float respRate) {
+   return (isVitalsInRange (bpm , bpmlimit[0],bpmlimit[1] ) && isVitalsInRange(spo,spolimit,INT_MAX) && isVitalsInRange(respRate ,respRatelimit[0],respRatelimit[1]) );
 }
 
 int main() {
   assert(vitalsAreOk(80, 95, 60) == true);
   assert(vitalsAreOk(60, 90, 40) == false);
+   
+  
 }
