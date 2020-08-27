@@ -9,7 +9,7 @@ bool bpmCheck(float bpm){
    return true;
 }
 bool spoCheck(float spo){
-  if(spo2 < spolimit)  return false;
+  if(spo < spolimit)  return false;
   return true;
 }
 bool resRatecheck(float respRate){
@@ -18,8 +18,8 @@ bool resRatecheck(float respRate){
 }
 
   
-bool vitalsAreOk(float bpm, float spo2, float respRate) {
-   return ( bpmCheck(bpm) && spoCheck(spo2) && resRatecheck(respRate));
+bool vitalsAreOk(float bpm, float spo, float respRate) {
+   return ( bpmCheck(bpm) && spoCheck(spo) && resRatecheck(respRate));
 }
 
 int main() {
